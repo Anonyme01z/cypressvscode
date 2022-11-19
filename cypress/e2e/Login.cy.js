@@ -3,9 +3,7 @@
 
  it('Mtn Biosmart Login', function(){
 
-    //  cy.visit('https://biowebstaging.mtnnigeria.net/')
-    
-        cy.visit('https://simregpoc.mtnnigeria.net')
+     cy.visit('https://biowebstaging.mtnnigeria.net/')
      cy.get('#loginUsername').type('vadewumi@seamfix.com')
      cy.get('#loginPassword').type('Bankole123456!!!')
 
