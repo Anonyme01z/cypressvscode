@@ -36,4 +36,15 @@ const { isExportDeclaration, isAssertClause } = require("typescript");
       cy.get('#searchParameterField').type('90108320911')
       cy.get('#ninSeachAndCaptureButton').click()
 
+      //Demo Page
+
+      cy.get('#dcDMotherMaiden').type('Josephine')
+      cy.get('#dcDHouseAddress').type('980')
+      cy.get('#dcDStreetAddress').type('Unity')
+      cy.get('#dcDCityAddress').type('Ikeja')
+      cy.get('.mat-form-field.ng-tns-c68-52 > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-infix').type('08104578293')
+
+      cy.get('#dcDStateofReg > .ng-select-container > .ng-value-container > .ng-input > input').click
+      cy.get('#a51d3c6b0df6-3').click()
+
 } );
