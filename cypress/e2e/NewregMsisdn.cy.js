@@ -2,10 +2,16 @@
 // const { isExportDeclaration, isAssertClause } = require("typescript");
 
 
- it('Mtn Biosmart Login', function(){
+before(() => {
 
-    //  cy.visit('https://biowebstaging.mtnnigeria.net/')
-     cy.visit('https://simregpoc.mtnnigeria.net:3443/bow/home/login')
+   cy.visit('https://simregpoc.mtnnigeria.net:3443/bow/home/login')
+
+ 
+ })
+
+
+
+ it('Mtn Biosmart Login', function(){
 
      cy.get('#loginUsername').type('vadewumi@seamfix.com')
      cy.get('#loginPassword').type('Bankole123456!!!')
@@ -20,9 +26,16 @@
      cy.get('#newRegMsisdn').type('09062058882')
                                        //  .should('contain', 'Validate')
      cy.get('#nrmAdd', {timeout: 4000}).click()
-     cy.on('window:confirm', (text) => {
-      expect(text).to.contains('Valid Msisdn');
-      })
+         // cy.on('window:confirm', (text) => {
+         //    expect(text).to.contains('Successfully added Msisdn',);
+         //    })
+         //    cy.on('window:confirm', (text) => {
+         //       expect(text).to.contains('Valid Msisdn',);
+         //       })
+         // cy.get('#bow-alert-container').should('contain', 'Successfully added Msisdn',)
+         cy.get('#toast-2 > .vh > .bBe').should('be.visible', 'Valid Msisdn' ).click()
+           
+         
 
       cy.get('#arCaptureImageButton > .mat-button-wrapper').click()
       cy.get('#pcCapturePortraitButton').click()
@@ -36,12 +49,12 @@
        cy.get('#searchParameterField').type('90108320911')
        cy.get('#ninSeachAndCaptureButton').click()
 
-       //Demo Page
-       cy.get('#dcDMotherMaiden').type('Josephine')
-       cy.get('#dcDHouseAddress').type('980')
-       cy.get('#dcDStreetAddress').type('Unity')
-       cy.get('#dcDCityAddress').type('Ikeja')
-       cy.get('#dcDAlternatePhone').type('08107144826')
+                              //Demo Page
+                              cy.get('#dcDMotherMaiden').type('Josephine')
+                              cy.get('#dcDHouseAddress').type('980')
+                              cy.get('#dcDStreetAddress').type('Unity')
+                              cy.get('#dcDCityAddress').type('Ikeja')
+                              cy.get('#dcDAlternatePhone').type('08107144826')
 
    
                               
@@ -121,15 +134,17 @@
                                                            .should('be.visible', 'KYC Form Capture').click()
                                cy.get('#dcCaptureKYCSaveAndClose').click()
                                cy.get('.mat-button-wrapper > .text-white').click()
+                                                            cy.on('window:alert',(t)=>{
+                                                               expect(t).to.contains('Please ensure the customer signs the KYC form before upload');
+                                                            })
+                              //save
+                              cy.get('#dcRegSubmitRegBtn > .ng-star-inserted', {timeout: 50000} )
+                                                         .click()
+                                                         
+                              //                            cy.getAppAlert('window:alert',(t)=>{
+                              //    expect(t).to.contains('Successfully saved registration. Feedback: PROCESSED');
+                              // })
 
-                                 //save
-                                 cy.get('#dcRegSubmitRegBtn > .ng-star-inserted').click()
-                               
 
 
-
-                                                                     
-                                                                     
-                               
-                               
 })
