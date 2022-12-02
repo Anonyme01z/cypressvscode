@@ -1,6 +1,5 @@
-//   <refrence types ="cypress"/>  //to refrence   cypress auto complete
 
-const { isExportDeclaration, isAssertClause } = require("typescript");
+// const { isExportDeclaration, isAssertClause } = require("typescript");
 
 
  it('Mtn Biosmart Login', function(){
