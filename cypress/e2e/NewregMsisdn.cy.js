@@ -74,10 +74,63 @@ const { isExportDeclaration, isAssertClause } = require("typescript");
                               
                               cy.get('.ng-option-label').click()
 
-                               cy.get('#adaeeaef5c19-2 > .ng-option-label').type('Aba North')
+                              cy.get('#dcDLgaOfResidence > .ng-select-container > .ng-value-container > .ng-input > input').type('Aba North')
                               cy.get('.ng-option-label').click()
 
-                               cy.get('#dcDAreaOfResidence > .ng-select-container > .ng-value-container > .ng-input > input').click()
-                               cy.get('#ab9a23bcc059-1 > .ng-option-label').click()
+                               cy.get('#dcDAreaOfResidence > .ng-select-container > .ng-value-container > .ng-input > input').type('ARIARIA')
+                               cy.get('.ng-option-label').click()
 
+                               //nextBtn
+
+                               cy.get('#dcPStepForwardBtn > .text-white').click()
+
+                               //fingerPrnt
+
+                               cy.get('#dcFOverrideLeftHandLabel').click()
+                               cy.get('#mat-select-value-25 > .mat-select-placeholder').click()
+                               cy.get('#mat-option-35 > .mat-option-text').click()
+                               cy.get('#dcHandOverrideContinue > .mat-button-wrapper > .text-white').click()
+                               cy.get('#dcCaptureHandSnap')
+                                                   .should('be.visible', 'Hand Capture' ).click()
+                               cy.get('#dcCaptureHandSave').click()
+                               cy.get('#dcFOverrideRightHand').click()
+                               cy.get('#mat-select-value-27 > .mat-select-placeholder')
+                                                                        .should('be.visible', 'To override the RIGHT HAND, you must specify a reason').click()
+                               cy.get('#mat-option-40 > .mat-option-text').click()      
+                               cy.get('#dcHandOverrideContinue > .mat-button-wrapper > .text-white')
+                                                                     .should('be.visible', 'Continue' ).click()  
+                               cy.get('#dcCaptureHandSnap').click()
+                               cy.get('#dcCaptureHandSave')
+                                                      .should('be.visible', 'Save').click()
+                               cy.get('#dcFingerStepForwardBtn').click()     
+                               
+                               //consent Capture
+                               cy.get('#dcPOpenModeOfId')
+                                                   .should('be.visible', 'Consent Capture').click()
+                               cy.get('#dcCaptureIdSnap')
+                                                   .should('be.visible', 'Id Capture').click()      
+                               cy.get('#dcCaptureIdSnap').click()
+                               cy.get('#dcCaptureIdSaveAndClose').click()
+
+                               cy.get('.mat-checkbox-inner-container').click()
+                               cy.get('.mat-select-placeholder').click()
+                               cy.get('#mat-option-41 > .mat-option-text')
+                                                            .should('be.visible', 'Amputee').click()
+
+                               cy.get('#dcPOpenKycFormCapture').click()
+                               cy.get('#dcCaptureKYCCapture')
+                                                           .should('be.visible', 'KYC Form Capture').click()
+                               cy.get('#dcCaptureKYCSaveAndClose').click()
+                               cy.get('.mat-button-wrapper > .text-white').click()
+
+                                 //save
+                                 cy.get('#dcRegSubmitRegBtn > .ng-star-inserted').click()
+                               
+
+
+
+                                                                     
+                                                                     
+                               
+                               
 })
