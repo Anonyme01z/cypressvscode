@@ -1,7 +1,7 @@
 
-it('google test', function(){
+// it('google test', function(){
 
-        cy.visit('https://www.google.com/')
-        cy.get('.gLFyf').type('Arsenal FC').type('{enter}')
+//         cy.visit('https://www.google.com/')
+//         cy.get('.gLFyf').type('Arsenal FC').type('{enter}')
 
-})
+// })
